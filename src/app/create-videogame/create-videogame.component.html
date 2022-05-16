@@ -1,0 +1,55 @@
+<div class="cal-md-6 offset-md-3">
+<h2>Create Video Game</h2>
+
+<form (ngSubmit) = "onSubmit()">
+    <!--Title-->
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" name="title" [(ngModel)] = "videogame.title">
+    </div>
+    <!--Studio-->
+    <div class="form-group">
+        <label for="studio">Studio</label>
+        <input type="text" class="form-control" id="studio" name="studio" [(ngModel)] = "videogame.studio">
+    </div>
+    <!--Release-->
+    <div class="form-group">
+        <label for="release_year">Release</label>
+        <input type="number" min="1900" max="2022" class="form-control" id="release_year" name="release_year" [(ngModel)] = "videogame.release_year">
+    </div>
+    <!--Multi-Player-->
+    <div class="form-group">
+        <label for="multiPlayer">Multi-Player</label>
+        <select name="multiPlayer" id="multiPlayer" class="form-select" #multi [(ngModel)] = "videogame.multiPlayer">
+        <option value="Supported">Supported</option>
+        <option value="Not Supported">Not Supported</option>  
+        </select>
+    </div>
+    <!--XBOX-->
+    <div class="form-group">
+        <label for="xbox">XBOX</label>
+        <select name="xbox" id="xbox" class="form-select" #xbox [(ngModel)] = "videogame.xbox">
+        <option value="Supported">Supported</option>
+        <option value="Not Supported">Not Supported</option>  
+        </select>
+    </div>
+    <!--PlayStation-->
+    <div class="form-group">
+        <label for="playStation">PLAYSTATION</label>
+        <select name="playStation" id="playStation" class="form-select" #playstation [(ngModel)] = "videogame.playStation">
+        <option value="Supported">Supported</option>
+        <option value="Not Supported">Not Supported</option>  
+        </select>
+    </div>
+    <!--PC-->
+    <div class="form-group">
+        <label for="pc">PC</label>
+        <select name="pc" id="pc" class="form-select" #pc [(ngModel)] = "videogame.pc">
+        <option value="Supported">Supported</option>
+        <option value="Not Supported">Not Supported</option>  
+        </select>
+    </div>
+    <!--Submit-->
+    <button class="btn btn-success" type="submit">Submit</button>
+</form>
+</div>
