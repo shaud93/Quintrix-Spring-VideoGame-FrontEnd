@@ -1,0 +1,26 @@
+<h1>VIDEO GAME LIST</h1>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Studio</th>
+            <th>Release Year</th>
+            <th>Multi-Player</th>
+            <th>XBOX</th>
+            <th>PlayStation</th>
+            <th>PC</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        <tr *ngFor = "let games of videogame">
+            <td>{{games.title}}</td>
+            <td>{{games.studio}}</td>
+            <td>{{games.release_year}}</td>
+            <td>{{games.multiPlayer}}</td>
+            <td>{{games.xbox}}</td>
+            <td>{{games.playStation}}</td>
+            <td>{{games.pc}}</td>
+        </tr>
+    </tbody>
+</table>
