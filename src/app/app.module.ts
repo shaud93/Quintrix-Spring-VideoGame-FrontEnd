@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { VideogameListComponent } from './videogame-list/videogame-list.component';
 import { CreateVideogameComponent } from './create-videogame/create-videogame.component';
 import { FormsModule } from '@angular/forms';
+import { UpdateGameComponent } from './update-game/update-game.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VideogameListComponent,
-    CreateVideogameComponent
+    CreateVideogameComponent,
+    UpdateGameComponent
   ],
   imports: [
     BrowserModule,

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'VideoGame';
+  title = 'Angular Springboot CRUD Full Stack App';
 }
