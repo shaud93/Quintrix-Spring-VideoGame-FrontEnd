@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { VideoGame } from '../video-game';
+import { VideoGameService } from '../video-game.service';
 
 @Component({
   selector: 'app-create-videogame',
@@ -9,17 +11,28 @@ import { VideoGame } from '../video-game';
 export class CreateVideogameComponent implements OnInit {
 
   videogame: VideoGame = new VideoGame();
-
+  
+  //gets the element from html
   @ViewChild('multi') multiPlayer: any;
   @ViewChild('xbox') xbox: any;
   @ViewChild('playstation') playStation: any;
   @ViewChild('pc') pc: any;
+  
  
   
-
-  constructor() { }
+  //Contructor
+  constructor(private service: VideoGameService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  saveGame(){
+    this.service.createGame(this.videogame).subscribe(data =>{console.log(data)}, error => console.log(error));
+    this.goBackToList();
+  }
+
+  goBackToList(){
+    this.router.navigate(["/game"]).then(() => {location.reload()});
   }
 
   onSubmit(){
@@ -43,6 +56,8 @@ export class CreateVideogameComponent implements OnInit {
     if(this.pc.nativeElement.value == "Not Supported") { this.videogame.pc = false}
 
     console.log(this.videogame);
+
+    this.saveGame();
   }
 
 }
